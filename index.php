@@ -28,7 +28,7 @@ if(isset($_GET['filter'])){
 <title>Welcome to the Finest Selection of Blu-rays on the internets!</title>
 </head>
 <body>
-
+	<div id="movieSelect">
 	<?php
 	include('includes/nav.html');
 
@@ -44,10 +44,7 @@ if(isset($_GET['filter'])){
 	}else{
 			echo "<p class =\"error\">{$getMovies}</p>";
 	}
-
-	include('includes/footer.html');
-
-
 	?>
+	</div>
 </body>
 </html>
