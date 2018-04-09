@@ -10,15 +10,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Anton|Lato" rel="stylesheet">
+<link href="css/admin_main.css" rel="stylesheet" type="text/css" media="screen">
 <title>CMS Portal Delete User</title>
 </head>
 <body>
-	<h1>Welcome Company Name to your admin page - Delete User</h1>
+<div class="center">
+	<h1>Delete User</h1>
 
 	<?php
 		while($row = mysqli_fetch_array($users)) {
 			echo "{$row['user_fname']}<a href =\"phpscripts/caller.php?caller_id=delete&id={$row['user_id']}\">Delete User</a><br>";
 		}
 	?>
+</div>
 </body>
 </html>

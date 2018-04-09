@@ -15,6 +15,10 @@ p {
     /* color: #efefef; */
 }
 
+body {
+    background-color: #efefef;
+}
+
 #navSteps {
     background-color: #1F1F1F;
     padding: 20px 20px 20px 20px;
@@ -35,12 +39,12 @@ li, a {
     text-decoration: none;
     color: #efefef;
     font-family: 'Lato', sans-serif; 
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
     display: inline-block;
     padding: 10px 20px;
     border: none;
-    background-color: #558F6E
+    background-color: #558F6E;
 }
 
 li, a:hover {
@@ -48,10 +52,9 @@ li, a:hover {
 }
 
 img {
-    float: left;
     margin: 20px 20px 20px 20px;
 }
 
 #movieSelect{
-    background-color: #efefef;;
+    background-color: #efefef;
 }

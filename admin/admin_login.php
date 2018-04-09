@@ -25,19 +25,23 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Anton|Lato" rel="stylesheet">
+	<link href="css/admin_main.css" rel="stylesheet" type="text/css" media="screen">
 	<title>CMS Portal Login</title>
 </head>
 <body>
-	<h1>Welcome Company Name</h1>
+<div class="center">
+	<h2>Welcome! Sign in to continue</h2>
 	<?php if(!empty($message)){echo $message;}?>
 	<form action="admin_login.php" method="post">
-		<label>Username:</label>
+		<label id="username">Username:</label>
 		<input type="text" name="username" value="">
 		<br>
-		<label>Password:</label>
+		<label id="password">Password:</label>
 		<input type="text" name="password" value="">
 		<br>
-		<input type="submit" name="submit" value="Show me the money">
+		<input type="submit" name="submit" value="Sign In" class="send">
 	</form>
+</div>
 </body>
 </html>

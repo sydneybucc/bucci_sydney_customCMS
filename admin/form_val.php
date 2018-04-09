@@ -34,10 +34,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Anton|Lato" rel="stylesheet">
+	<link href="css/admin_main.css" rel="stylesheet" type="text/css" media="screen">
 	<title>CMS Portal Login</title>
 </head>
 <body>
-	<h1>Welcome Company Name</h1>
+<div class="center">
+	<h2>Form Validation</h2>
 	<?php echo form_errors($errors);?>
 
 	<!--XSS Attacks-->
@@ -50,16 +53,17 @@
 	<!--XSS Attacks-->
 
 	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post"><!--THIS IS REALLY IMPORTANT-->
-		<label>Name:</label>
+		<label class="formStyle">Name:</label>
 		<input type="text" name="name" value="">
 		<br>
-		<label>Phone:</label>
+		<label class="formStyle">Phone:</label>
 		<input type="text" name="phone" value="">
 		<br>
-		<label>Address:</label>
+		<label class="formStyle">Address:</label>
 		<input type="text" name="address" value="">
 		<br>
-		<input type="submit" name="submit" value="Show me the money">
+		<input type="submit" name="submit" value="Send" class="send">
 	</form>
+</div>
 </body>
 </html>

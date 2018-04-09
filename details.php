@@ -11,6 +11,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Anton|Lato" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet" type="text/css" media="screen">
 <title>Details</title>
 </head>
 <body>	

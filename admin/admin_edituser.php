@@ -27,24 +27,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Anton|Lato" rel="stylesheet">
+<link href="css/admin_main.css" rel="stylesheet" type="text/css" media="screen">
 <title>CMS Portal Login</title>
 </head>
 <body>
-	<h1>Welcome Company Name to your Edit user page</h1>
+<div class="center">
+	<h2>Edit User</h2>
 	<?php if(!empty($message)){echo $message;} ?>
 	<form action="admin_edituser.php" method="post">
-	<label>First Name:</label>
+	<label class="formStyle">First Name:</label>
 	<input type="text" name="fname" value="<?php echo $found_user['user_fname'];?>"<br><br>
-	<label>Username:</label>
+	<label class="formStyle">Username:</label>
 	<input type="text" name="username" value="<?php echo $found_user['user_name'];?>"><br><br>
-	<label>Password:</label>
+	<label class="formStyle">Password:</label>
 	<input type="text" name="password" value="<?php echo $found_user['user_pass'];?>"><br><br>
-	<label>Email:</label>
+	<label class="formStyle">Email:</label>
 	<input type="text" name="email" value="<?php echo $found_user['user_email'];?>"><br><br>
 	<br><br>
-	<input type ="submit" name="submit" value="Edit User">
+	<input type ="submit" name="submit" value="Edit User" class="send">
 
 
 	</form>
+</div>
 </body>
 </html>
