@@ -2,9 +2,11 @@
 
 	function createUser($fname, $username, $password, $email, $userlvl){
 		include('connect.php');
-		$userString = "INSERT INTO tbl_user VALUES(NULL, '{$fname}', '{$username}', '{$password}', '{$email}', NULL, '{$userlvl}', 'no')";
-//		echo $userString;
+		// $userString = "INSERT INTO tbl_user VALUES(NULL, '{$fname}', '{$username}', '{$password}', '{$email}', NULL, '{$userlvl}', 'no')";
+		$userString = "INSERT INTO tbl_user (user_fname, user_name, user_pass, user_email) VALUES ('{$fname}', '{$username}', '{$password}', '{$email}')";
+		//echo $userString;
 		$userQuery = mysqli_query($link, $userString);
+		// echo $userQuery;
 		if($userQuery) {
 			redirect_to("admin_index.php");
 		}else{
@@ -39,7 +41,7 @@
 		if($delquery){
 			redirect_to("../admin_index.php");
 		}else{
-			$message = "Fuck, call security!";
+			$message = "Call security!";
 			return $message;
 		}
 

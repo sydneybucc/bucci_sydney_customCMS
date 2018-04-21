@@ -1,5 +1,5 @@
 <?php
-	function addMovie($title, $cover, $year, $runtime, $storyline, $trailer, $release, $genre){
+	function addMovie($title, $desc, $cover, $trailer, $runtime, $release, $rating, $genre){
 		//echo "From addmovie.php";
 		include('connect.php');
 		
@@ -19,10 +19,12 @@
 
 	//	$size = getimagesize($orig);
 	//echo $size[1];
-			 $addString = "INSERT INTO tbl_movies VALUES (NULL,'{$cover['name']}','{$title}','{$year}','{$runtime}','{$storyline}','{$trailer}','{$release}')";
+			//  $addString = "INSERT INTO tbl_movies VALUES (NULL,'{$cover['name']}','{$title}','{$year}','{$runtime}','{$storyline}','{$trailer}','{$release}')";
+			 $addString = "INSERT INTO tbl_movies (movies_title, movies_desc, movies_cover, movies_trailer, movies_runtime, movies_release, movies_rating) VALUES ('{$title}', '{$desc}', '{$cover}', '{$trailer}', '{$runtime}', '{$release}', '{$rating}')";
+			//  ^^^ $addString gets mad at me and throws an error but it doesn't seem to negatively effect anything?
 
 
-			 //echo $addString;
+			//  echo $addString;
 			 $addQuery = mysqli_query($link,$addString);
 			 if($addQuery){
 				$qstring = "SELECT * FROM tbl_movies ORDER BY movies_id DESC LIMIT 1";
