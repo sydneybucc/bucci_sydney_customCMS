@@ -21,7 +21,7 @@
 	//echo $size[1];
 			//  $addString = "INSERT INTO tbl_movies VALUES (NULL,'{$cover['name']}','{$title}','{$year}','{$runtime}','{$storyline}','{$trailer}','{$release}')";
 			 $addString = "INSERT INTO tbl_movies (movies_title, movies_desc, movies_cover, movies_trailer, movies_runtime, movies_release, movies_rating) VALUES ('{$title}', '{$desc}', '{$cover}', '{$trailer}', '{$runtime}', '{$release}', '{$rating}')";
-			//  ^^^ $addString gets mad at me and throws an error but it doesn't seem to negatively effect anything?
+			//  ^^^ $addString gets mad at me and throws an error, not sure why
 
 
 			//  echo $addString;
