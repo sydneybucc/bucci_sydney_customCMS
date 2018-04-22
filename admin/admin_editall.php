@@ -24,7 +24,7 @@
         <?php
             // echo single_edit('tbl_movies','movies_id',1);
             while($row = mysqli_fetch_array($movies)){
-                echo "{$row['movies_title']}<a href =\"admin_editmovie.php?caller_id=editMovie&id={$row['movies_id']}\">Edit Movie</a><br>";
+                echo "{$row['movies_title']}<a href =\"admin_editform.php?caller_id=editMovie&id={$row['movies_id']}\">Edit Movie</a><br>";
             }
         ?>
     </div>
