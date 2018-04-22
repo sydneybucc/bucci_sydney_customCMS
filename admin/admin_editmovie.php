@@ -1,5 +1,5 @@
 <?php
-	require_once('admin/phpscripts/config.php');
+	require_once('phpscripts/config.php');
 	if(isset($_GET['id'])){
 		$id= $_GET['id'];
 		$tbl = "tbl_movies";
@@ -19,11 +19,12 @@
 	<?php
 	if(!is_string($getSingle)) {
 		$row = mysqli_fetch_array($getSingle);
-		echo "<img src=\"images/{$row['movies_cover']}\"alt=\"{$row['movies_title']}\">
+		echo "<img src=\"/images/{$row['movies_cover']}\"alt=\"{$row['movies_title']}\">
 		<h2>{$row['movies_title']}</h2>
 		<p>{$row['movies_release']}</p>
-		<p>{$row['movies_desc']}</p>
-		<a href=\"index.php\">Back...</a>
+        <p>{$row['movies_desc']}</p>
+        <a href=\"admin_editform.php\">Edit</a> <br><br>
+		<a href=\"admin_editall.php\">Back...</a>
 
 		";
 	}else{
