@@ -1,31 +1,29 @@
-<?php 
-    ini_set('display_errors',1);
-    error_reporting(E_ALL);
-    require_once('phpscripts/config.php');
-
-    $id = $_GET['id'];
-    echo $id;
-    $tbl = "tbl_movies";
-    $col = "movies_id";
-    $movieEditForm = getSingle($tbl, $col, $id);
-    $found_movie = mysqli_fetch_array($movieEditForm, MYSQLI_ASSOC);
-    
+<?php
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+require_once('phpscripts/config.php');
 
 
-    if(isset($_POST['submit'])) {
-        $title = trim($_POST['title']);
-        $desc = trim($_POST['desc']);
-        $cover = $_FILES['cover'];
-        $trailer = trim($_POST['trailer']);
-		$runtime = trim($_POST['runtime']);
-        $release = trim($_POST['release']);
-        $rating = trim($_POST['rating']);
-        $result = editMovie($id, $title, $desc, $cover, $trailer, $runtime, $release, $rating);
-        $message = $result;
-        
+$id = $_GET['id'];
 
+if(isset($_POST['submit'])) {
+    $title = trim($_POST['title']);
+    $desc = trim($_POST['desc']);
+    $cover = $_POST['cover'];
+    // I couldn't get the images to appear correctly when editing the movie. They seem to upload fine when creating a movie however. 
+    $trailer = trim($_POST['trailer']);
+    $runtime = trim($_POST['runtime']);
+    $release = trim($_POST['release']);
+    $rating = trim($_POST['rating']);
+    $result = editMovie($id, $title, $desc, $cover, $trailer, $runtime, $release, $rating);
+    $message = $result;
+}
 
-    }
+$tbl = "tbl_movies";
+$col = "movies_id";
+$movieEditForm = getSingle($tbl, $col, $id);
+$found_movie = mysqli_fetch_array($movieEditForm, MYSQLI_ASSOC);
+
 
 ?>
 <!doctype html>
@@ -42,7 +40,7 @@
     <div class="large-6 large-offset-3 columns topSpace">
         <h2>Edit Movie</h2>
         <?php if(!empty($message)){echo $message;} ?>
-        <form action="admin_editform.php" method="post">
+        <form action="admin_editform.php?id=<?php echo $id ?>" method="post">
         <label class="formStyle">Title:</label>
         <input type="text" name="title" value="<?php echo $found_movie['movies_title'];?>"><br><br>
         <label class="formStyle">Description:</label>
