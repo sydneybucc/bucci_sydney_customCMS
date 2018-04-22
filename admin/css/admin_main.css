@@ -18,6 +18,10 @@
  body {
      background-color: #efefef;
  }
+
+ .topSpace {
+     margin-top: 300px;
+ }
  
  #navSteps {
      background-color: #1F1F1F;
@@ -57,10 +61,6 @@
  
  #movieSelect{
      background-color: #efefef;
- }
-
- .center {
-     padding: 300px 0 0 650px;
  }
 
  #username {
