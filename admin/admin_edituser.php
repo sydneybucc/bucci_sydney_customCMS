@@ -39,7 +39,7 @@
 		<?php if(!empty($message)){echo $message;} ?>
 		<form action="admin_edituser.php" method="post">
 		<label class="formStyle">First Name:</label>
-		<input type="text" name="fname" value="<?php echo $found_user['user_fname'];?>"<br><br>
+		<input type="text" name="fname" value="<?php echo $found_user['user_fname'];?>"><br><br>
 		<label class="formStyle">Username:</label>
 		<input type="text" name="username" value="<?php echo $found_user['user_name'];?>"><br><br>
 		<label class="formStyle">Password:</label>
