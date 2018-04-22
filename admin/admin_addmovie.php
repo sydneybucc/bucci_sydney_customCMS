@@ -16,7 +16,7 @@
         $rating = trim($_POST['rating']);
 		$genre = $_POST['genList'];
 		$uploadMovie = addMovie($title, $desc, $cover, $trailer, $runtime, $release, $rating, $genre);
-		$message = $uploadMovie;
+        $message = $uploadMovie;
 	
 
 		}

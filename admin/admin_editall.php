@@ -1,7 +1,10 @@
 <?php
-    ini_set('display_errors',1);
-    error_reporting(E_ALL);
+    // ini_set('display_errors',1);
+    // error_reporting(E_ALL);
     require_once('phpscripts/config.php');
+
+    $tbl = "tbl_movies";
+	$movies = getAll($tbl);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,10 +19,13 @@
 </head>
 <body>
 <div class="expanded row">
-    <div class="large-6 large-offset-3 columns topSpace">
+    <div class="large-12 large-offset-5 columns topSpace">
         <h2>Edit Movie</h2>
         <?php
-            echo single_edit('tbl_movies','movies_id',1);
+            // echo single_edit('tbl_movies','movies_id',1);
+            while($row = mysqli_fetch_array($movies)){
+                echo "{$row['movies_title']}<a href =\"admin_editmovie.php?caller_id=editMovie&id={$row['movies_id']}\">Edit Movie</a><br>";
+            }
         ?>
     </div>
 </div>
